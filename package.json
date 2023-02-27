@@ -1,0 +1,18 @@
+{
+    "name": "serverless-esbuild-template",
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.59",
+        "@types/node": "^14.0.27",
+        "@types/serverless": "^1.72.5",
+        "@typescript-eslint/eslint-plugin": "^3.8.0",
+        "@typescript-eslint/parser": "^3.8.0",
+        "esbuild": "^0.6.18",
+        "esbuild-register": "^1.0.2",
+        "eslint": "^7.6.0",
+        "serverless": "^3.27.0",
+        "serverless-esbuild": "^1.39.0",
+        "serverless-offline": "^12.0.4",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7"
+    }
+}

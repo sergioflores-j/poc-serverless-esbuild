@@ -1,0 +1,27 @@
+service: serverless-esbuild-template
+
+plugins:
+    - serverless-esbuild
+    - serverless-offline
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+
+custom:
+    esbuild:
+        minify: true
+        bundle: true
+        sourcemap: true
+        packager: yarn
+        watch:
+            pattern: ["src/**/*.ts"]
+            ignore: [".serverless/**/*", ".build", ".esbuild"]
+
+functions:
+    hello:
+        handler: src/handler.hello
+        events:
+            - http:
+                  path: hello
+                  method: get
