@@ -22,8 +22,9 @@ plugins:
 
 custom:
   serverless-offline:
-    useInProcess: true
-    localEnvironment: true
+    # Tweaks for SLS v9+
+    # useInProcess: true
+    # localEnvironment: true
   esbuild:
     minify: false
     bundle: true
