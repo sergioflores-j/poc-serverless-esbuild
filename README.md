@@ -2,7 +2,7 @@
 
 Watch mode is problematic with serverless-offline v9+. It has been introduced a new way for running the handlers with Worker Threads and the support for HMR has been dropped.
 
-This is a poc repository to check what are the possibilities, due to lack of (good) support for serverless v3 when using serverless-offline v8.
+This is a poc repository to check what are the possibilities, due to possible lack of (good) support for serverless v3 options when using serverless-offline v8.
 
 Steps to reproduce:
 
