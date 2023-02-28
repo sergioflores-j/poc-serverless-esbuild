@@ -1,27 +1,36 @@
 service: serverless-esbuild-template
 
-plugins:
-    - serverless-esbuild
-    - serverless-offline
+package:
+  individually: true
 
 provider:
-    name: aws
-    runtime: nodejs12.x
+  name: aws
+  runtime: nodejs16.x
 
-custom:
-    esbuild:
-        minify: true
-        bundle: true
-        sourcemap: true
-        packager: yarn
-        watch:
-            pattern: ["src/**/*.ts"]
-            ignore: [".serverless/**/*", ".build", ".esbuild"]
 
 functions:
-    hello:
-        handler: src/handler.hello
-        events:
-            - http:
-                  path: hello
-                  method: get
+  hello:
+    handler: src/handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    useInProcess: true
+    localEnvironment: true
+  esbuild:
+    minify: false
+    bundle: true
+    sourcemap: true
+    target: node16
+    packager: yarn
+    watch:
+      pattern: ['src/**/*.ts'] # match only typescript files in src directory
+      ignore: ['.serverless/**/*', '.build', '.esbuild']
+
